@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chauffeur Privé - Accueil</title>
+    <meta name="description" content="Consultez les tarifs de Chauffeur Privé pour vos transferts en VTC à Lyon et partout en France : trajets gare, aéroport, déplacements professionnels, privés, et mises à disposition. Estimez le coût de votre course en ligne.">
+    <link rel="stylesheet" href="styles.css">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1M0E8ok9wg0aV2N0ErI1zGmcR2x3gQLc&libraries=places&callback=initMap"></script>
+
+</head>
+<body>
+    <!-- En-tête et Menu -->
+    <header class="header">
+        <nav class="navbar">
+            <h1 class="logo">Chauffeur Privé</h1>
+            <div class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="prestations.html">Nos Prestations</a></li>
+                <li><a href="vehicules-chauffeurs.html">Nos Véhicules et Chauffeurs</a></li>
+                <li><a href="tarifs.html">Tarifs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="a-propos.html">À propos</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <h2>Votre Chauffeur Privé, à votre service</h2>
+            <p>Profitez d'un service de transport sécurisé, ponctuel et professionnel.</p>
+            <a href="contact.html" class="button">Réserver maintenant</a>
+        </div>
+    </header>
+    <main>
+        <section class="intro">
+            <h2>Estimation de tarifs</h2>
+            <p>Les tarifs indiqués ci-dessous ne sont qu'une estimation et peuvent varier en fonction des conditions de transport. Le prix final sera confirmé par notre société lors de la réservation.</p>
+        </section>
+    
+        <!-- Formulaire de calcul de tarifs -->
+        <section class="pricing-form">
+            <h2>Calculez votre tarif estimé</h2>
+    
+            <form id="tarifForm">
+                <!-- Choix du type de véhicule -->
+                <label for="vehicleType">Type de véhicule</label>
+                <select id="vehicleType" required>
+                    <option value="berline">Berline - 3 places</option>
+                    <option value="suv">SUV - 4 places</option>
+                    <option value="van">Van - 6 places</option>
+                </select>
+    
+                <!-- Choix du type de transfert -->
+                <label for="transferType">Type de transfert</label>
+                <select id="transferType" required>
+                    <option value="simple">Transfert simple</option>
+                    <option value="allerRetour">Aller et retour</option>
+                    <option value="miseDispo">Mise à disposition</option>
+                </select>
+    
+                <!-- Adresse de départ et adresse de retour avec Google Maps API -->
+                <label for="departure">Adresse de départ</label>
+                <input type="text" id="departure" placeholder="Entrez l'adresse de départ" required>
+    
+                <label for="destination">Adresse de destination</label>
+                <input type="text" id="destination" placeholder="Entrez l'adresse de destination" required>
+    
+                <!-- Bouton pour ajouter des étapes supplémentaires -->
+                <div id="extraStops">
+                    <button type="button" onclick="addStop()">Ajouter une étape</button>
+                </div>
+    
+                <!-- Choix de l'heure (jour ou nuit) -->
+                <label for="departureTime">Heure de départ</label>
+                <input type="time" id="departureTime" required>
+
+    
+                <!-- Bouton pour calculer le tarif -->
+                <button type="button" onclick="calculateFare()">Calculer le tarif</button>
+            </form>
+    
+            <!-- Affichage du résultat de l'estimation -->
+            <div id="fareResult" style="display: none;">
+                <h3>Tarif estimé :</h3>
+                <p id="calculatedFare">€0</p>
+                <button type="button" class="reserve-button" onclick="sendSmsReservation()">Réserver maintenant</button>
+            </div>
+        </section>
+
+        <div id="map" style="height: 400px; width: 100%;"></div>
+    
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2024 Chauffeur Privé. Tous droits réservés.</p>
+        <ul class="footer-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="prestations.html">Nos Prestations</a></li>
+            <li><a href="vehicules-chauffeurs.html">Nos Véhicules et Chauffeurs</a></li>
+            <li><a href="tarifs.html">Tarifs</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+        </ul>
+    </div>
+</footer>
+    <script src="script.js"></script>
+</body>
+</html>
