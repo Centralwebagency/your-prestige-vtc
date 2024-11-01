@@ -652,6 +652,10 @@ body {
 
         .hamburger {
             display: block;
+            position: absolute; // Positionner le hamburger par rapport à .navbar
+            top: 10px; // Ajustez cette valeur pour l’espacement vertical
+            right: 20px; // Ajustez cette valeur pour l’espacement horizontal
+            z-index: 10;
         }
 
         // Activer l'affichage avec animation
