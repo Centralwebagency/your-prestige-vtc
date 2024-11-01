@@ -151,7 +151,7 @@ function sendSmsReservation() {
     const encodedMessage = encodeURIComponent(message);
 
     // Créer le lien SMS avec le numéro du chauffeur
-    const smsLink = `sms:+330123456789?body=${encodedMessage}`; // Remplacez +330123456789 par le numéro du chauffeur
+    const smsLink = `sms:+33768007615?body=${encodedMessage}`; // Remplacez +330123456789 par le numéro du chauffeur
 
     // Rediriger vers le lien SMS pour ouvrir l'application de SMS avec le message pré-rempli
     window.location.href = smsLink;

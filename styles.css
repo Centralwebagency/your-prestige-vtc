@@ -92,6 +92,12 @@ body {
   background-color: #e1a119;
 }
 
+.logo-link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
 .intro {
   padding: 2rem;
   text-align: center;
