@@ -125,8 +125,7 @@ body {
   width: 100%;
   height: auto;
   max-height: 200px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .banner h3 {
   position: absolute;
@@ -542,7 +541,11 @@ body {
     flex-direction: column;
   }
   .header .navbar .nav-links {
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
@@ -554,7 +557,6 @@ body {
     padding: 1rem 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transform: translateY(-20px);
-    opacity: 0;
     transition: transform 0.4s ease, opacity 0.4s ease;
   }
   .header .navbar .hamburger {
@@ -565,9 +567,11 @@ body {
     z-index: 10;
   }
   .header .navbar .nav-links.active {
-    display: flex;
+    max-height: 500px;
     transform: translateY(0);
     opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
   }
   .highlights {
     flex-direction: column;
