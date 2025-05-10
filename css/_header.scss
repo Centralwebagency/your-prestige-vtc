@@ -1,0 +1,273 @@
+@use 'variables';
+
+.header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/image-header.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    min-height: 60vh; // ou 70vh selon ton design
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+
+            li a {
+                color: white;
+                text-decoration: none;
+                &:hover {
+                    color: variables.$accent-color;
+                }
+            }
+        }
+
+        // Bouton hamburger (initialement masqué en mode desktop)
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            width: 25px;
+            height: 20px;
+            position: relative;
+            z-index: 10;
+
+            span {
+                display: block;
+                width: 100%;
+                height: 3px;
+                background-color: white;
+                margin: 5px 0;
+                transition: 0.3s ease;
+            }
+
+            // Transformation en croix lorsque le menu est actif
+            &.active span:nth-child(1) {
+                transform: rotate(45deg);
+                position: absolute;
+                top: 8px;
+            }
+
+            &.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            &.active span:nth-child(3) {
+                transform: rotate(-45deg);
+                position: absolute;
+                top: 8px;
+            }
+        }
+    }
+
+    .hero {
+        margin-top: auto;
+        margin-bottom: auto;
+        text-align: center;
+
+        h2 {
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        p {
+            margin: 1rem 0;
+        }
+
+        .button {
+            background-color: variables.$accent-color;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1.5rem;
+            display: inline-block;
+
+            &:hover {
+                background-color: darken(variables.$accent-color, 10%);
+            }
+        }
+    }
+}
+
+.logo-link {
+    text-decoration: none; 
+    color: inherit; 
+    display: inline-block; 
+}
+
+@media (max-width: variables.$tablet) {
+  .header {
+    padding: 1.5rem;
+
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .logo {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        top: 1rem;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 0.8rem;
+        width: 100%;
+        display: none; // caché par défaut en responsive
+        background-color: variables.$primary-color;
+        padding: 1rem;
+
+        &.active {
+          display: flex;
+        }
+
+        li a {
+          font-size: 1rem;
+        }
+      }
+
+      .hamburger {
+        display: block;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+      }
+    }
+
+    .hero {
+      margin-top: 1.5rem;
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .button {
+        font-size: 0.95rem;
+        padding: 0.7rem 1.3rem;
+      }
+    }
+  }
+}
+
+@media (max-width: variables.$mobile) {
+  .header {
+    padding: 1rem;
+
+    .navbar {
+      .logo {
+        font-size: 1.1rem;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: variables.$primary-color;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        z-index: 999;
+
+      // Animation : menu masqué par défaut
+        transform: translateX(100%);
+        transition: transform 0.4s ease-in-out;
+
+      li a {
+        color: white;
+        font-size: 1.5rem;
+        text-decoration: none;
+
+    &:hover {
+      color: variables.$accent-color;
+    }
+  }
+
+  &.active {
+    transform: translateX(0); // ✅ animation visible
+  }
+}
+
+
+      .hamburger {
+        position: fixed;
+        top: 1.5rem;
+        right: 1.5rem;
+        width: 22px;
+        height: 18px;
+        z-index: 1001; // ✅ Pour qu'il reste au-dessus du menu plein écran
+
+      span {
+        height: 2.5px;
+        margin: 4px 0;
+        background-color: white; // ✅ Assure qu'on voit la croix
+        transition: all 0.3s ease;
+      }
+
+    &.active span:nth-child(1) {
+      transform: rotate(45deg);
+      position: absolute;
+      top: 7px;
+    }
+
+    &.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    &.active span:nth-child(3) {
+      transform: rotate(-45deg);
+      position: absolute;
+      top: 7px;
+    }
+  }
+}
+
+    .hero {
+      position: absolute;
+      top: 22%; // ✅ plus haut qu'avant
+      left: 50%;
+      transform: translate(-50%, -20%); // ✅ recentrage vertical avec léger recul
+      width: 90%;
+      text-align: center;
+
+      h2 {
+        font-size: 1.7rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+
+      .button {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,164 @@
+@use 'variables';
+
+.prestations {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    padding: 2rem;
+
+    .prestation-card {
+        background-color: white;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 300px;
+        padding: 1.5rem;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        
+        h2 {
+            font-size: 1.5rem;
+            color: variables.$primary-color;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1rem;
+            color: variables.$text-color;
+            line-height: 1.6;
+        }
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-color: variables.$accent-color;
+        }
+    }
+}
+
+// Engagements de Service
+.service-commitments {
+    padding: 2rem;
+    text-align: center;
+
+    h2 {
+        color: variables.$primary-color;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .commitments {
+        max-width: 800px;
+        margin: 0 auto;
+
+        .commitment {
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+
+            h3 {
+                font-size: 1.5rem;
+                color: variables.$primary-color;
+                margin-bottom: 0.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+                line-height: 1.6;
+                color: variables.$text-color;
+            }
+
+            &.alt-background {
+                background-color: #f8f9fa;
+            }
+        }
+    }
+}
+
+@media (max-width: variables.$tablet) {
+  .prestations {
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+
+    .prestation-card {
+      max-width: 90%;
+      padding: 1.2rem;
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+    }
+  }
+
+  .service-commitments {
+    padding: 1.5rem;
+
+    h2 {
+      font-size: 1.7rem;
+    }
+
+    .commitments {
+      .commitment {
+        padding: 1.2rem;
+
+        h3 {
+          font-size: 1.3rem;
+        }
+
+        p {
+          font-size: 0.95rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: variables.$mobile) {
+  .prestations {
+    padding: 1rem;
+
+    .prestation-card {
+      max-width: 100%;
+      padding: 1rem;
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .service-commitments {
+    padding: 1rem;
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    .commitments {
+      .commitment {
+        padding: 1rem;
+
+        h3 {
+          font-size: 1.2rem;
+        }
+
+        p {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}

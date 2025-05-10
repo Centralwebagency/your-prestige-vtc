@@ -1,0 +1,104 @@
+@use 'variables';
+
+.vehicles {
+    padding: 2rem;
+    text-align: center;
+
+    h2 {
+        color: variables.$primary-color;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .section-intro {
+        margin-bottom: 2rem;
+        font-size: 1rem;
+        color: variables.$text-color;
+    }
+
+    .vehicle-category {
+        margin-bottom: 2rem;
+        text-align: center;
+
+        h3 {
+            font-size: 1.5rem;
+            color: variables.$primary-color;
+            margin-bottom: 0.5rem;
+        }
+
+        .vehicle-image {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: variables.$text-color;
+            font-size: 1rem;
+            line-height: 1.6;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+    }
+}
+
+@media (max-width: variables.$tablet) {
+  .vehicles {
+    padding: 1.5rem;
+
+    h2 {
+      font-size: 1.6rem;
+    }
+
+    .section-intro {
+      font-size: 0.95rem;
+    }
+
+    .vehicle-category {
+      h3 {
+        font-size: 1.3rem;
+      }
+
+      .vehicle-image {
+        max-width: 250px;
+      }
+
+      p {
+        font-size: 0.95rem;
+        padding: 0 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: variables.$mobile) {
+  .vehicles {
+    padding: 1rem;
+
+    h2 {
+      font-size: 1.4rem;
+    }
+
+    .section-intro {
+      font-size: 0.9rem;
+    }
+
+    .vehicle-category {
+      h3 {
+        font-size: 1.2rem;
+      }
+
+      .vehicle-image {
+        max-width: 200px;
+      }
+
+      p {
+        font-size: 0.9rem;
+        padding: 0 0.5rem;
+      }
+    }
+  }
+}
+

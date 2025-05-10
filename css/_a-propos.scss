@@ -1,0 +1,140 @@
+@use 'variables';
+
+.mission-values {
+    padding: 2rem;
+    text-align: center;
+
+    h2 {
+        color: variables.$primary-color;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .values {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+
+        .value {
+            max-width: 250px;
+            padding: 1rem;
+            background-color: white;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+
+            h3 {
+                color: variables.$primary-color;
+                margin-bottom: 0.5rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+                color: variables.$text-color;
+                line-height: 1.6;
+            }
+        }
+    }
+}
+
+// Section "Travail direct avec la clientèle"
+.clientele {
+    padding: 2rem;
+    text-align: center;
+
+    h2 {
+        color: variables.$primary-color;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        max-width: 600px;
+        margin: 0 auto;
+        font-size: 1rem;
+        color: variables.$text-color;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: variables.$tablet) {
+  .mission-values {
+    padding: 1.5rem;
+
+    h2 {
+      font-size: 1.7rem;
+    }
+
+    .values {
+      gap: 1rem;
+
+      .value {
+        max-width: 90%;
+        margin: 0 auto;
+
+        h3 {
+          font-size: 1.1rem;
+        }
+
+        p {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+
+  .clientele {
+    padding: 1.5rem;
+
+    h2 {
+      font-size: 1.7rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+      padding: 0 1rem;
+    }
+  }
+}
+
+@media (max-width: variables.$mobile) {
+  .mission-values {
+    padding: 1rem;
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    .values {
+      gap: 0.75rem;
+
+      .value {
+        max-width: 100%;
+        padding: 0.8rem;
+
+        h3 {
+          font-size: 1rem;
+        }
+
+        p {
+          font-size: 0.85rem;
+        }
+      }
+    }
+  }
+
+  .clientele {
+    padding: 1rem;
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+      padding: 0 0.5rem;
+    }
+  }
+}

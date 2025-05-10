@@ -1,0 +1,333 @@
+@use 'variables';
+@use 'vehicules-chauffeurs';
+@use 'prestations';
+@use 'a-propos';
+@use 'tarifs';
+@use 'mentions-legales';
+@use 'header';
+@use 'footer';
+
+// Styles de base
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: variables.$text-color;
+    background-color: variables.$background-color;
+}
+
+
+
+// Section Introduction de l'entreprise
+.intro {
+    padding: 2rem;
+    text-align: center;
+    background-color: #f8f9fa;
+
+    h3 {
+        color: variables.$primary-color;
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        max-width: 800px;
+        margin: 0 auto;
+        color: variables.$text-color;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
+
+// Section bannières
+.banner {
+    position: relative;
+    text-align: center;
+    color: white;
+
+    img {
+        width: 100%;
+        height: auto;
+        max-height: 200px; // Hauteur modérée pour les grands écrans
+        object-fit: cover;
+    }
+
+    h3 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.8rem;
+        margin: 0;
+        z-index: 1;
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+}
+
+// Section points forts
+.highlights {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+    background-color: white;
+
+    .highlight {
+        width: 30%;
+        text-align: center;
+        padding: 1.5rem;
+        border: 1px solid rgba(0, 0, 0, 0.1); // Contour léger
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Ombre légère
+        transition: transform 0.3s ease, box-shadow 0.3s ease; // Effet de transition
+
+        h3 {
+            color: variables.$primary-color;
+            margin-bottom: 0.5rem;
+        }
+
+        &:hover {
+            transform: translateY(-5px); // Légère remontée au survol
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); // Ombre accentuée
+            border-color: variables.$accent-color; // Accentue le contour au survol
+        }
+    }
+}
+
+
+// Section des informations de contact
+.contact-info {
+    padding: 2rem;
+    text-align: center;
+
+    h2 {
+        color: variables.$primary-color;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .contact-methods {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+
+        .contact-item {
+            text-align: center;
+
+            h3 {
+                font-size: 1.3rem;
+                color: variables.$primary-color;
+                margin-bottom: 0.5rem;
+            }
+
+            a {
+                font-size: 1.1rem;
+                color: variables.$accent-color;
+                text-decoration: none;
+                font-weight: bold;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+    
+    // Section texte simple 
+    .simple-text {
+        padding: 2rem;
+        background-color: #f9f9f9;
+        text-align: center;
+    
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1rem;
+    
+            .title {
+                font-size: 2rem;
+                color: variables.$primary-color;
+                margin-bottom: 1rem;
+            }
+    
+            .content {
+                font-size: 1rem;
+                color: variables.$text-color;
+                line-height: 1.6;
+                text-align: justify;
+    
+                a {
+                    color: variables.$accent-color;
+                    text-decoration: none;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+    
+
+@media (max-width: variables.$tablet) {
+  body {
+    font-size: 0.95rem;
+  }
+
+  .intro {
+    padding: 1.5rem;
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+    }
+  }
+
+  .banner {
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    img {
+      max-height: 180px;
+    }
+  }
+
+  .highlights {
+    flex-direction: column;
+    align-items: center;
+
+    .highlight {
+      width: 90%;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .contact-info {
+    padding: 1.5rem;
+
+    h2 {
+      font-size: 1.7rem;
+    }
+
+    .contact-methods {
+      flex-direction: column;
+      gap: 1.5rem;
+
+      .contact-item {
+        h3 {
+          font-size: 1.2rem;
+        }
+
+        a {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  .simple-text {
+    padding: 1.5rem;
+
+    .container {
+      .title {
+        font-size: 1.7rem;
+      }
+
+      .content {
+        font-size: 0.95rem;
+      }
+    }
+  }
+}
+
+@media (max-width: variables.$mobile) {
+  body {
+    font-size: 0.9rem;
+  }
+
+  .intro {
+    padding: 1rem;
+
+    h3 {
+      font-size: 1.3rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+      padding: 0 0.5rem;
+    }
+  }
+
+  .banner {
+    h3 {
+      font-size: 1.2rem;
+    }
+
+    img {
+      max-height: 150px;
+    }
+  }
+
+  .highlights {
+    .highlight {
+      width: 100%;
+      padding: 1rem;
+    }
+  }
+
+  .contact-info {
+    padding: 1rem;
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    .contact-methods {
+      gap: 1rem;
+
+      .contact-item {
+        h3 {
+          font-size: 1.1rem;
+        }
+
+        a {
+          font-size: 0.95rem;
+        }
+      }
+    }
+  }
+
+  .simple-text {
+    padding: 1rem;
+
+    .container {
+      padding: 0.5rem;
+
+      .title {
+        font-size: 1.5rem;
+      }
+
+      .content {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
