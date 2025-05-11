@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://yourprestige-vtc.com/</loc>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://yourprestige-vtc.com/a-propos</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://yourprestige-vtc.com/contact</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://yourprestige-vtc.com/mentions-legales</loc>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://yourprestige-vtc.com/prestations</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://yourprestige-vtc.com/tarifs</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://yourprestige-vtc.com/vehicules-chauffeurs</loc>
+    <priority>0.70</priority>
+  </url>
+</urlset>
