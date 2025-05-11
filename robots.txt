@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap:
+https://yourprestige-vtc.com/sitemap.xml
