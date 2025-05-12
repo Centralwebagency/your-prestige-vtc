@@ -4,6 +4,7 @@
 @use 'a-propos';
 @use 'tarifs';
 @use 'mentions-legales';
+@use 'contact';
 @use 'header';
 @use 'footer';
 
@@ -107,45 +108,7 @@ body {
 }
 
 
-// Section des informations de contact
-.contact-info {
-    padding: 2rem;
-    text-align: center;
 
-    h2 {
-        color: variables.$primary-color;
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .contact-methods {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        flex-wrap: wrap;
-
-        .contact-item {
-            text-align: center;
-
-            h3 {
-                font-size: 1.3rem;
-                color: variables.$primary-color;
-                margin-bottom: 0.5rem;
-            }
-
-            a {
-                font-size: 1.1rem;
-                color: variables.$accent-color;
-                text-decoration: none;
-                font-weight: bold;
-
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
-        }
-    }
-}
 
     
     // Section texte simple 
@@ -220,27 +183,7 @@ body {
     }
   }
 
-  .contact-info {
-    padding: 1.5rem;
-
-    h2 {
-      font-size: 1.7rem;
-    }
-
-    .contact-methods {
-      flex-direction: column;
-      gap: 1.5rem;
-
-      .contact-item {
-        h3 {
-          font-size: 1.2rem;
-        }
-
-        a {
-          font-size: 1rem;
-        }
-      }
-    }
+  
   }
 
   .simple-text {
@@ -256,7 +199,7 @@ body {
       }
     }
   }
-}
+
 
 @media (max-width: variables.$mobile) {
   body {
@@ -293,27 +236,7 @@ body {
     }
   }
 
-  .contact-info {
-    padding: 1rem;
-
-    h2 {
-      font-size: 1.5rem;
-    }
-
-    .contact-methods {
-      gap: 1rem;
-
-      .contact-item {
-        h3 {
-          font-size: 1.1rem;
-        }
-
-        a {
-          font-size: 0.95rem;
-        }
-      }
-    }
-  }
+  
 
   .simple-text {
     padding: 1rem;
@@ -331,3 +254,4 @@ body {
     }
   }
 }
+

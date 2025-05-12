@@ -42,6 +42,46 @@
         <p>Pour toute information, réclamation ou demande de réservation, n'hésitez pas à nous contacter. Assurez-vous de nous fournir toutes les informations nécessaires à votre réservation, telles que la date, l'heure, la destination et le nombre de passagers.</p>
     </section>
 
+    <form action="https://formspree.io/f/mdkgwggl" method="POST">
+        <label>Prénom :
+            <input type="text" name="Prénom" required>
+        </label>
+
+        <label>Nom :
+            <input type="text" name="Nom" required>
+        </label>
+
+        <label>Numéro de téléphone :
+            <input type="tel" name="Téléphone" required>
+        </label>
+
+        <label>Adresse e-mail :
+            <input type="email" name="Email" required>
+        </label>
+
+        <label>Type de véhicule :
+            <select name="Véhicule" required>
+            <option value="Berline">Berline</option>
+            <option value="Van">Van</option>
+            </select>
+        </label>
+
+        <label>Nombre de passagers :
+            <input type="number" name="Passagers" min="1" required>
+        </label>
+
+        <label>Nombre de bagages :
+            <input type="number" name="Bagages" min="0" required>
+        </label>
+
+        <label>Description de la demande :
+            <textarea name="Détails" rows="5" placeholder="Adresse départ, arrivée, horaires…"></textarea>
+        </label>
+
+        <button type="submit">Envoyer la demande</button>
+    </form>
+
+
     <!-- Informations de contact -->
     <section class="contact-info">
         <h2>Nos coordonnées</h2>

@@ -1,0 +1,169 @@
+@use 'variables';
+
+.contact-info {
+    padding: 2rem;
+    text-align: center;
+
+    h2 {
+        color: variables.$primary-color;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .contact-methods {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+
+        .contact-item {
+            text-align: center;
+
+            h3 {
+                font-size: 1.3rem;
+                color: variables.$primary-color;
+                margin-bottom: 0.5rem;
+            }
+
+            a {
+                font-size: 1.1rem;
+                color: variables.$accent-color;
+                text-decoration: none;
+                font-weight: bold;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+form {
+  max-width: 600px;
+  margin: 3rem auto;
+  background-color: variables.$background-color;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  color: variables.$text-color;
+
+  label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    margin-top: 1.5rem;
+    color: variables.$primary-color;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 0.25rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: variables.$accent-color;
+      box-shadow: 0 0 0 2px rgba(variables.$accent-color, 0.2);
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  button[type="submit"] {
+    display: block;
+    margin-top: 2rem;
+    width: 100%;
+    background-color: variables.$accent-color;
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background-color: darken(variables.$accent-color, 10%);
+    }
+  }
+}
+
+@media (max-width: variables.$tablet) {
+  form {
+    padding: 1.5rem;
+  }
+
+  .contact-info {
+    padding: 1.5rem;
+
+    h2 {
+      font-size: 1.7rem;
+    }
+
+    .contact-methods {
+      flex-direction: column;
+      gap: 1.5rem;
+
+      .contact-item {
+        h3 {
+          font-size: 1.2rem;
+        }
+
+        a {
+          font-size: 1rem;
+        }
+      }
+    }
+}
+
+// Responsive mobile
+@media (max-width: variables.$mobile) {
+  form {
+    padding: 1rem;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 0.95rem;
+  }
+
+  button[type="submit"] {
+    font-size: 1rem;
+  }
+}
+
+.contact-info {
+    padding: 1rem;
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    .contact-methods {
+      gap: 1rem;
+
+      .contact-item {
+        h3 {
+          font-size: 1.1rem;
+        }
+
+        a {
+          font-size: 0.95rem;
+        }
+      }
+    }
+  }
+}
+
