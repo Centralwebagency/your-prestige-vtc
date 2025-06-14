@@ -461,6 +461,7 @@
   }
   .map-container {
     height: 200px;
+    display: block;
   }
   .reserve-button {
     font-size: 0.9rem;
